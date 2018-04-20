@@ -1,0 +1,23 @@
+<div>
+    <div class='wrapper' style="width:100%; display:table">
+
+      <div class='container' style="width:40%;position: left; background:#FCFC10; display:table-cell"  [dragula]='"second-bag"'>
+        <div style="cursor: move;transition:opacity 0.4s ease-in-out">You can move these elements between these two containers</div>
+        <div style="cursor: move; transition:opacity 0.4s ease-in-out">Moving them anywhere else isn't quite possible</div>
+        <div style="cursor: move;transition:opacity 0.4s ease-in-out">There's also the possibility of moving elements around in the same container, changing their position</div>
+      </div>
+
+      <div class='container' style="width:40%; background:#CCCC11; position: right; display: table-cel" [dragula]='"second-bag"'>
+        <div style="cursor: move; transition:opacity 0.4s ease-in-out">This is the default use case. You only need to specify the containers you want to use</div>
+        <div style="cursor: move;transition:opacity 0.4s ease-in-out">More interactive use cases lie ahead</div>
+        <div style="cursor: move;transition:opacity 0.4s ease-in-out">Make sure to check out the <a href='https://github.com/bevacqua/dragula#readme'>documentation on GitHub!</a></div>
+      </div>
+    </div>
+  </div>
+
+	<ul [dragula]='"third-bag"' [dragulaOptions]="options" [dragulaModel]='items'>
+	  <li *ngFor="let item of items">{{item}}</li>
+	</ul>
+
+
+
